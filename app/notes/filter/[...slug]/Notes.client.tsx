@@ -11,7 +11,10 @@ import Modal from "@/components/Modal/Modal";
 import NoteForm from "@/components/NoteForm/NoteForm";
 import SearchBox from "@/components/SearchBox/SearchBox";
 
-export default function NotesClient() {
+interface NotesClientProps {
+  category: string | undefined;
+}
+export default function NotesClient({ category }: NotesClientProps) {
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
@@ -27,8 +30,8 @@ export default function NotesClient() {
   }, [search]);
 
   const { data, isLoading, error } = useQuery({
-    queryKey: ["notes", page, debouncedSearch],
-    queryFn: () => fetchNotes({ page, search: debouncedSearch }),
+    queryKey: ["notes", page, debouncedSearch, category],
+    queryFn: () => fetchNotes({ page, search: debouncedSearch, tag: category }),
     placeholderData: keepPreviousData,
   });
 
@@ -37,7 +40,7 @@ export default function NotesClient() {
   if (!data) return <p>No data</p>;
 
   return (
-    <div>
+    <div className={css.app}>
       <SearchBox
         value={search}
         onSearch={(value) => {
