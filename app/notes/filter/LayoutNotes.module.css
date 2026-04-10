@@ -2,18 +2,21 @@
   display: flex;
   flex-direction: row;
   flex: 1;
+  background: linear-gradient(135deg, #e6d3e6 0%, #bfffe6 100%);
 }
 
 .sidebar {
-  width: 250px;
-  background-color: #2c2c2c;
+  width: 280px;
+  background: linear-gradient(135deg, #c8a2c8 0%, #7fffd4 100%);
   color: white;
-  padding: 16px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  border-right: 1px solid #ddd;
+  border-right: 3px solid #ffc0cb;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .notesWrapper {
   width: 100%;
+  padding: 20px;
 }

@@ -3,19 +3,25 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #333;
+  background: linear-gradient(135deg, #c8a2c8 0%, #7fffd4 100%);
   color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid #ffc0cb;
 }
 
-.headerLink {
+.logo {
   text-decoration: none;
-  color: white;
-  font-size: 1.5rem;
-  font-weight: bold;
 }
 
-.headerLink:hover {
-  color: #ddd;
+.logoText {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.logo:hover .logoText {
+  color: #ffe0e6;
 }
 
 .navigation {
@@ -35,8 +41,12 @@
   text-decoration: none;
   color: white;
   font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
 }
 
 .navigationLink:hover {
-  color: #ddd;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffe0e6;
 }

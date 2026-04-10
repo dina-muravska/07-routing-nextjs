@@ -4,7 +4,9 @@ import css from "./Header.module.css";
 export default function Header() {
   return (
     <header className={css.header}>
-      <Link href="/">NoteHub</Link>
+      <Link href="/" className={css.logo}>
+        <span className={css.logoText}>📝 NoteHub</span>
+      </Link>
 
       <nav>
         <ul className={css.navigation}>
